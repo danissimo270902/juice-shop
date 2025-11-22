@@ -1,0 +1,27 @@
+name: AccuKnox Container Scan Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  accuknox-cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run AccuKnox CSPM Scan
+        uses: accuknox/container-scan-action@v1.0.1
+        with:
+          soft_fail: false          
+          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+          accuknox_label: ${{ secrets.ACCUKNOX_LABEL }}
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          image: "your-image-name"
+          tag: "latest"             
+          severity: "LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN"
