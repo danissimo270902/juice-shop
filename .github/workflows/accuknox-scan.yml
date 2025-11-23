@@ -32,6 +32,6 @@ jobs:
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
           accuknox_label: ${{ secrets.ACCUKNOX_LABEL }}
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
-          image: "juice-shop:latest"
+          image_name: "juice-shop"
           tag: "latest"
           severity: "LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN"
