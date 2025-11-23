@@ -34,4 +34,4 @@ jobs:
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           image_name: "juice-shop"
           tag: "latest"
-          severity: "LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN"
+          severity: "HIGH"
